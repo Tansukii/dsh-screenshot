@@ -1,0 +1,17 @@
+# Changelog
+
+## 1.0.1
+
+- Fix: the session message loop could wedge after a capture closed, so later presses were
+  acknowledged but never showed the overlay (the "click does nothing" bug).
+- Fix: guard every window message handler against a disposed form (the
+  "cannot access a disposed object: SnipForm" dialog).
+- Fix: the toolbar flashed at the bottom of the screen before moving to its real position.
+- Fix: the magnifier stopped refreshing while the pointer slid along a screen edge.
+- Fix: right click cancels the capture without leaking the desktop context menu.
+- New: the UI follows the DSH language (zh / en) on every capture.
+- Docs: bilingual README, real screenshots, MIT licence.
+
+## 1.0.0
+
+- First release: instant region capture, annotations, colour picker, magnifier.
