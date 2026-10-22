@@ -1,6 +1,6 @@
 {
   "name": "dsh-screenshot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Built-in screenshot tool for DeepSeek Harness on Windows: instant region capture, annotations, colour picker, all local.",
   "license": "MIT",
   "type": "module",

@@ -3944,7 +3944,7 @@ public class LoupeForm : Form
                 g.DrawString(Program.T("坐标: (", "LOC: (") + bx + ", " + by + ")", InfoFont, tb, 14, ty);
                                 g.DrawString(Program.T("色值: #", "HEX: #") + c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2"), InfoFont, tb, 14, ty + 22);
                                 if (Program.LangZh)
-                    g.DrawString(Program.T("按C复制色号", "Press C to copy the colour"), InfoFont, hintBrush, 14, ty + 44);
+                    g.DrawString(Program.T("按Ctrl+C复制色号", "Press Ctrl+C to copy the colour"), InfoFont, hintBrush, 14, ty + 44);
                 else
                 {
                     g.DrawString("Press Ctrl+C to", InfoFont, hintBrush, 14, ty + 44);

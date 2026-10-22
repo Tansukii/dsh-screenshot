@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+
+- The magnifier hint now reads `按Ctrl+C复制色号` / `Press Ctrl+C to copy the colour`.
+
 ## 1.0.2
 
 - Fix: every capture now runs on its own STA thread with a fresh message loop. Reusing the
