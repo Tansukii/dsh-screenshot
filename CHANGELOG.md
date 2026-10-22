@@ -2,8 +2,10 @@
 
 ## 1.0.4
 
-- The magnifier card border follows the theme; a hard white border showed as a bright line
-  beside the text block in dark mode.
+- Dark mode: the magnifier card no longer draws an outline. The hard white border showed as a
+  bright line beside the text block, and a grey replacement still read as a strip, so the card
+  is drawn bare in dark mode; light mode keeps its white outline.
+- The magnifier hint reads `按Ctrl+C复制色号` / `Press Ctrl+C to copy the colour`.
 
 ## 1.0.3
 

@@ -3901,8 +3901,12 @@ public class LoupeForm : Form
             // Border first, so the magnified pixels cover it edge to edge. It has to follow
             // the theme: a hard white pen showed up as a bright line beside the text block
             // in dark mode.
-            using (var border = new Pen(dark ? Color.FromArgb(86, 86, 86) : Color.White, 1))
-                g.DrawPath(border, path);
+            // Light mode keeps the reference image's white outline; in dark mode any
+            // outline reads as a strip along the left edge, so the card is drawn bare.
+            if (!dark)
+            {
+                using (var border = new Pen(Color.White, 1)) g.DrawPath(border, path);
+            }
 
             int zoom = 5, cols = 44, rows = 44;
             int bx = pt.X - origin.X, by = pt.Y - origin.Y;
