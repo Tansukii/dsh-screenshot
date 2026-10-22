@@ -131,12 +131,7 @@ static class Program
         // Warm mode: first call runs a session, then the process waits for the next one so
         // the plugin's button feels instant instead of paying the startup every time.
         StartPipeServer(parentPid);
-        if (showNow)
-        {
-            var first = new SnipForm(hide);
-            first.Show();
-            Application.Run();
-        }
+        if (showNow) RunSession(hide);
         else WarmUpStatics();
         TrimIdle();      // waiting around must not cost 30 MB of working set
         long idleDeadline = Environment.TickCount + 180000;
@@ -158,19 +153,36 @@ static class Program
             // always matches the application instead of the OS.
             if (request.Contains("lang=zh")) LangZh = true;
             else if (request.Contains("lang=en")) LangZh = false;
-            try
-            {
-                var session = new SnipForm(request.Contains("hide=1"));
-                session.Show();
-                // Run() with no form: a plain message loop that OnFormClosed ends with
-                // ExitThread. Run(form) was leaving the thread wedged after the close,
-                // so every later wake was acknowledged and then ignored.
-                Application.Run();
-            }
-            catch (Exception ex) { Program.LogCrash("serve session: " + ex); }
+            RunSession(request.Contains("hide=1"));
             Program.TLog("serve: session ended");
             TrimIdle();
         }
+    }
+
+    // Each capture gets a fresh STA thread with its own WinForms message loop. Reusing
+    // the thread across sessions left a stale thread context behind, and the next
+    // session died creating its window handle:
+    //   ObjectDisposedException: cannot access a disposed object: "SnipForm"
+    //   at System.Windows.Forms.Control.CreateHandle()
+    static void RunSession(bool hide)
+    {
+        Exception failure = null;
+        var thread = new System.Threading.Thread(() =>
+        {
+            try
+            {
+                using (var form = new SnipForm(hide))
+                {
+                    Application.Run(form);
+                }
+            }
+            catch (Exception ex) { failure = ex; }
+        });
+        thread.SetApartmentState(System.Threading.ApartmentState.STA);
+        thread.IsBackground = true;
+        thread.Start();
+        thread.Join();
+        if (failure != null) Program.LogCrash("serve session: " + failure);
     }
 
     // Pipe the plugin talks to: writes "show hide=1" (or "show") for each capture.

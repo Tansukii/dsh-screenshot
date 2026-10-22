@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2
+
+- Fix: every capture now runs on its own STA thread with a fresh message loop. Reusing the
+  thread left a stale WinForms context, so the second and later captures died in
+  `Control.CreateHandle()` with `ObjectDisposedException: cannot access a disposed object: "SnipForm"`.
+
 ## 1.0.1
 
 - Fix: the session message loop could wedge after a capture closed, so later presses were
