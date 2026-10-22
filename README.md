@@ -1,4 +1,4 @@
-# dsh-screenshot
+# dsh内置截图插件
 
 [English](README.en.md) | 中文
 
