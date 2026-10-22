@@ -1,0 +1,15 @@
+# build / editor
+obj/
+*.pdb
+*.user
+*.suo
+
+# local development scratch
+test/
+_backup/
+*.log
+*.tgz
+
+# OS noise
+Thumbs.db
+desktop.ini
