@@ -21,7 +21,8 @@
     "bin/",
     "lib/",
     "src/",
-    "cordis.patch.yml"
+    "cordis.patch.yml",
+    "docs/"
   ],
   "os": [
     "win32"
