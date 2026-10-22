@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+- The magnifier card border follows the theme; a hard white border showed as a bright line
+  beside the text block in dark mode.
+
 ## 1.0.3
 
 - The magnifier hint now reads `按Ctrl+C复制色号` / `Press Ctrl+C to copy the colour`.

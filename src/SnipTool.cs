@@ -3898,9 +3898,11 @@ public class LoupeForm : Form
 
             using (var b = new SolidBrush(cardBack)) g.FillRectangle(b, panel);
 
-            // Border first, so the magnified pixels cover it edge to edge. Drawn on
-            // top it reads as a pale line along the left and top of the image.
-            using (var border = new Pen(Color.White, 1)) g.DrawPath(border, path);
+            // Border first, so the magnified pixels cover it edge to edge. It has to follow
+            // the theme: a hard white pen showed up as a bright line beside the text block
+            // in dark mode.
+            using (var border = new Pen(dark ? Color.FromArgb(86, 86, 86) : Color.White, 1))
+                g.DrawPath(border, path);
 
             int zoom = 5, cols = 44, rows = 44;
             int bx = pt.X - origin.X, by = pt.Y - origin.Y;
