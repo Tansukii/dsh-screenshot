@@ -1,8 +1,8 @@
 # dsh-screenshot
 
-**English** — A WeChat/QQ-style screenshot tool for DeepSeek Harness on Windows: one click opens a full-screen region selector in about 0.2 s, with annotations, a colour picker and edge snapping. Confirming puts the image straight on the clipboard. The exe also works standalone.
+**English** — The built-in screenshot tool for DeepSeek Harness on Windows: one click opens a full-screen region selector in about 0.2 s, with annotations, a colour picker and edge snapping. Confirming puts the image straight on the clipboard. The exe also works standalone.
 
-**中文** — Windows 上对标微信 / QQ 截图的 **DeepSeek Harness 插件**：点一下就在约 **0.2 秒内**弹出全屏框选，可标注、取色、贴边吸附，确认后直接进剪贴板。exe 也可以脱离 DSH 单独使用。
+**中文** — **DSH 内置截图工具**（Windows 版 DeepSeek Harness 插件）：点一下就在约 **0.2 秒内**弹出全屏框选，可标注、取色、贴边吸附，确认后直接进剪贴板。exe 也可以脱离 DSH 单独使用。
 
 ![截图主界面 / Overview](docs/screenshots/overview-zh.png)
 
@@ -105,8 +105,6 @@ cordis.patch.yml      plugin registration / 插件注册
 csc /nologo /target:winexe /optimize+ /out:bin\SnipTool.exe `
     /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll src\SnipTool.cs
 ```
-
-![English UI](docs/screenshots/overview-en.png)
 
 ## License
 

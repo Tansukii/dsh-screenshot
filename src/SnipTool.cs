@@ -131,7 +131,12 @@ static class Program
         // Warm mode: first call runs a session, then the process waits for the next one so
         // the plugin's button feels instant instead of paying the startup every time.
         StartPipeServer(parentPid);
-        if (showNow) Application.Run(new SnipForm(hide));
+        if (showNow)
+        {
+            var first = new SnipForm(hide);
+            first.Show();
+            Application.Run();
+        }
         else WarmUpStatics();
         TrimIdle();      // waiting around must not cost 30 MB of working set
         long idleDeadline = Environment.TickCount + 180000;
@@ -153,7 +158,15 @@ static class Program
             // always matches the application instead of the OS.
             if (request.Contains("lang=zh")) LangZh = true;
             else if (request.Contains("lang=en")) LangZh = false;
-            try { Application.Run(new SnipForm(request.Contains("hide=1"))); }
+            try
+            {
+                var session = new SnipForm(request.Contains("hide=1"));
+                session.Show();
+                // Run() with no form: a plain message loop that OnFormClosed ends with
+                // ExitThread. Run(form) was leaving the thread wedged after the close,
+                // so every later wake was acknowledged and then ignored.
+                Application.Run();
+            }
             catch (Exception ex) { Program.LogCrash("serve session: " + ex); }
             Program.TLog("serve: session ended");
             TrimIdle();
@@ -1088,12 +1101,14 @@ public class SnipForm : Form
     protected override void OnFormClosed(FormClosedEventArgs e)
     {
         closing = true;
+        Program.TLog("close: editor");
         if (editor != null)
         {
             try { editor.Done = null; editor.Cancelled = null; editor.Close(); } catch (Exception) { }
             editor = null;
         }
         UninstallMouseHook();
+        Program.TLog("close: hook done");
         if (Perf)
         {
             try
@@ -1111,16 +1126,25 @@ public class SnipForm : Form
             catch (Exception) { }
         }
         if (hideDsh && dshWnd != IntPtr.Zero) Program.ShowWindow(dshWnd, 9);
+        Program.TLog("close: bar");
         if (bar != null) { bar.Hide(); bar.Close(); }
+        Program.TLog("close: bar done");
+        Program.TLog("close: gdi");
         DisposeGdi();
         DisposeBlit();
+        Program.TLog("close: gdi done");
+        Program.TLog("close: loupe");
         if (loupe != null) { loupe.Close(); loupe = null; }
-
+        Program.TLog("close: loupe done");
+        Program.TLog("close: before base");
         base.OnFormClosed(e);
+        Program.TLog("close: after base");
+        try { Application.ExitThread(); } catch (Exception) { }
     }
 
     protected override void OnResize(EventArgs e)
     {
+        if (IsDisposed || Disposing) return;   // messages can still arrive after Dispose
         base.OnResize(e);
         PositionChrome();
     }
@@ -1285,6 +1309,7 @@ public class SnipForm : Form
 
     protected override void OnMouseDown(MouseEventArgs e)
     {
+        if (IsDisposed || Disposing) return;   // messages can still arrive after Dispose
         // Right click cancels, like every other snipping tool; swallowing it here also
         // keeps the desktop context menu from appearing over the overlay.
         if (e.Button == MouseButtons.Right) { Close(); return; }
@@ -1508,6 +1533,7 @@ public class SnipForm : Form
 
     protected override void OnMouseMove(MouseEventArgs e)
     {
+        if (IsDisposed || Disposing) return;   // messages can still arrive after Dispose
         base.OnMouseMove(e);
         // The 16ms timer is a WM_TIMER, which Windows only delivers when the queue
         // is empty; while dragging the queue is never empty, so the magnifier used
@@ -1778,6 +1804,7 @@ public class SnipForm : Form
 
     protected override void OnMouseUp(MouseEventArgs e)
     {
+        if (IsDisposed || Disposing) return;   // messages can still arrive after Dispose
         base.OnMouseUp(e);
         if (pendingEditorAt.HasValue)
         {
@@ -2095,6 +2122,7 @@ public class SnipForm : Form
 
     protected override void OnKeyDown(KeyEventArgs e)
     {
+        if (IsDisposed || Disposing) return;   // messages can still arrive after Dispose
         base.OnKeyDown(e);
         // While the text box is open it owns Enter and Escape: Enter commits the text
         // and Escape cancels it. Without this, KeyPreview let the form capture the
@@ -2628,6 +2656,7 @@ public class SnipForm : Form
     // and blitted once (this override was lost when the rendering core was restored).
     protected override void WndProc(ref Message m)
     {
+        if (IsDisposed || Disposing) return;   // messages can still arrive after Dispose
         if (m.Msg == 0x007B) return;                     // WM_CONTEXTMENU: no menu
         // Consume the whole right-click here: closing on the button-down handed the
         // button-up to the desktop, which is what opened its context menu.
@@ -2638,6 +2667,7 @@ public class SnipForm : Form
 
     protected override void OnPaint(PaintEventArgs e)
     {
+        if (IsDisposed || Disposing) return;   // messages can still arrive after Dispose
         if (screen == null || hdcBuf == IntPtr.Zero)
         {
             using (var b = new SolidBrush(Color.Black)) e.Graphics.FillRectangle(b, ClientRectangle);

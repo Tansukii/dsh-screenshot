@@ -1,7 +1,7 @@
 {
   "name": "dsh-screenshot",
   "version": "1.0.0",
-  "description": "WeChat/QQ-style screenshot tool for DeepSeek Harness on Windows: instant region capture, annotations, colour picker, all local.",
+  "description": "Built-in screenshot tool for DeepSeek Harness on Windows: instant region capture, annotations, colour picker, all local.",
   "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
@@ -14,7 +14,6 @@
     "dsh-plugin",
     "screenshot",
     "snipping-tool",
-    "wechat",
     "windows",
     "annotation"
   ],
