@@ -22,7 +22,7 @@
 
 ![工具栏 / Toolbar](docs/screenshots/toolbar.png)
 
-![放大器取色 / Magnifier](docs/screenshots/magnifier.png)
+
 
 ## 安装 / Install
 
