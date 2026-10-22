@@ -20,6 +20,8 @@
 | Follows the DSH UI language (zh / en) | 跟随 DSH 界面语言（中 / 英） |
 | ~6 MB idle, ~0.5 % CPU, exits when idle | 空闲约 6 MB、0.5 % CPU，空闲自动退出 |
 
+![工具栏 / Toolbar](docs/screenshots/toolbar.png)
+
 ![放大器取色 / Magnifier](docs/screenshots/magnifier.png)
 
 ## 安装 / Install
