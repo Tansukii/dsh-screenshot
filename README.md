@@ -49,8 +49,10 @@
    }
    ```
 
-3. **English** — Restart DSH; a scissors button appears on the right of the composer.
-   **中文** — 重启 DSH，输入框右侧会出现剪刀按钮。
+3. **English** — Restart DSH; this button appears on the right of the composer:
+   **中文** — 重启 DSH，输入框右侧会出现这个按钮：
+
+   ![截图按钮 / Screenshot button](docs/screenshots/button.png)
 
 ## 使用 / Shortcuts
 
