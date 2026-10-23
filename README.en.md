@@ -1,6 +1,6 @@
 # DSH screenshot tool
 
-Click, select, done: a full-screen region selector in about 0.2 s, with annotations and a colour picker, straight to the clipboard.
+A screenshot tool for DeepSeek Harness: select a region, annotate it, pick a colour, confirm to copy.
 
 ![platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078D6?logo=windows&logoColor=white)
 ![dsh](https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A50.2.0-4B6BFB)
