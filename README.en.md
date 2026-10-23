@@ -1,6 +1,6 @@
 # DSH screenshot tool
 
-A screenshot plugin for DeepSeek Harness on Windows: one click, a full-screen region selector in about 0.2 s, straight to the clipboard.
+Click, select, done: a full-screen region selector in about 0.2 s, with annotations and a colour picker, straight to the clipboard.
 
 ![platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078D6?logo=windows&logoColor=white)
 ![dsh](https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A50.2.0-4B6BFB)

@@ -1,6 +1,6 @@
 # DSH 内置截图工具
 
-Windows 上的截图插件，给 DeepSeek Harness 用：点一下，约 0.2 秒弹出全屏框选，确认即进剪贴板。
+点一下就截：约 0.2 秒弹出全屏框选，标注、取色后按回车直接进剪贴板，全程本地。
 
 ![platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078D6?logo=windows&logoColor=white)
 ![dsh](https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A50.2.0-4B6BFB)
