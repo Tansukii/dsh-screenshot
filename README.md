@@ -1,6 +1,16 @@
-# dsh内置截图插件
+<h1 align="center">📸 dsh-screenshot</h1>
 
-[English](README.en.md) | 中文
+<p align="center"><b>DSH 内置截图工具 · Windows</b><br>
+框选、标注、取色，确认即进剪贴板</p>
+
+<p align="center"><a href="README.en.md">English</a> | 中文</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/platform-Windows%2010%2B-0078D6?logo=windows&logoColor=white" alt="platform">
+  <img src="https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A50.2.0-4B6BFB" alt="dsh">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
+  <img src="https://img.shields.io/github/v/release/Tansukii/dsh-screenshot?label=release&color=blue" alt="release">
+</p>
 
 **DSH 内置截图工具**（Windows 版 DeepSeek Harness 插件）：点一下就在约 **0.2 秒内**弹出全屏框选，
 可标注、取色、贴边吸附，确认后直接进剪贴板。exe 也可以脱离 DSH 单独使用。
