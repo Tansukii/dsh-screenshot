@@ -1,22 +1,13 @@
-<h1 align="center">📸 dsh-screenshot</h1>
+# DSH screenshot tool
 
-<p align="center"><b>The built-in screenshot tool for DeepSeek Harness · Windows</b><br>
-Select, annotate, pick a colour — straight to the clipboard</p>
+A screenshot plugin for DeepSeek Harness on Windows: one click, a full-screen region selector in about 0.2 s, straight to the clipboard.
 
-<p align="center">English | <a href="README.md">中文</a></p>
+![platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078D6?logo=windows&logoColor=white)
+![dsh](https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A50.2.0-4B6BFB)
+![license](https://img.shields.io/badge/license-MIT-green)
+![release](https://img.shields.io/github/v/release/Tansukii/dsh-screenshot?label=release&color=blue)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/platform-Windows%2010%2B-0078D6?logo=windows&logoColor=white" alt="platform">
-  <img src="https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A50.2.0-4B6BFB" alt="dsh">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
-  <img src="https://img.shields.io/github/v/release/Tansukii/dsh-screenshot?label=release&color=blue" alt="release">
-</p>
-
-The built-in screenshot tool for DeepSeek Harness on Windows: one click opens a full-screen
-region selector in about 0.2 s, with annotations, a colour picker and edge snapping.
-Confirming puts the image straight on the clipboard. The exe also works standalone.
-
-> Keywords: screenshot, screen capture, snip, snipping tool, DSH plugin, DeepSeek Harness plugin.
+English | [中文](README.md)
 
 ![Overview](docs/screenshots/overview-zh.png)
 

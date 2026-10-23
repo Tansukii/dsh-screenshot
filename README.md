@@ -1,21 +1,13 @@
-<h1 align="center">📸 dsh-screenshot</h1>
+# DSH 内置截图工具
 
-<p align="center"><b>DSH 内置截图工具 · Windows</b><br>
-框选、标注、取色，确认即进剪贴板</p>
+Windows 上的截图插件，给 DeepSeek Harness 用：点一下，约 0.2 秒弹出全屏框选，确认即进剪贴板。
 
-<p align="center"><a href="README.en.md">English</a> | 中文</p>
+![platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078D6?logo=windows&logoColor=white)
+![dsh](https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A50.2.0-4B6BFB)
+![license](https://img.shields.io/badge/license-MIT-green)
+![release](https://img.shields.io/github/v/release/Tansukii/dsh-screenshot?label=release&color=blue)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/platform-Windows%2010%2B-0078D6?logo=windows&logoColor=white" alt="platform">
-  <img src="https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A50.2.0-4B6BFB" alt="dsh">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
-  <img src="https://img.shields.io/github/v/release/Tansukii/dsh-screenshot?label=release&color=blue" alt="release">
-</p>
-
-**DSH 内置截图工具**（Windows 版 DeepSeek Harness 插件）：点一下就在约 **0.2 秒内**弹出全屏框选，
-可标注、取色、贴边吸附，确认后直接进剪贴板。exe 也可以脱离 DSH 单独使用。
-
-> 关键词：截图 · 截屏 · 屏幕捕获 · screen capture · snip · DSH 插件 · DeepSeek Harness 插件
+[English](README.en.md) | 中文
 
 ![主界面](docs/screenshots/overview-zh.png)
 
