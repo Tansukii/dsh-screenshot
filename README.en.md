@@ -6,6 +6,8 @@ The built-in screenshot tool for DeepSeek Harness on Windows: one click opens a 
 region selector in about 0.2 s, with annotations, a colour picker and edge snapping.
 Confirming puts the image straight on the clipboard. The exe also works standalone.
 
+> Keywords: screenshot, screen capture, snip, snipping tool, DSH plugin, DeepSeek Harness plugin.
+
 ![Overview](docs/screenshots/overview-zh.png)
 
 ## Features

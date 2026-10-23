@@ -5,6 +5,8 @@
 **DSH 内置截图工具**（Windows 版 DeepSeek Harness 插件）：点一下就在约 **0.2 秒内**弹出全屏框选，
 可标注、取色、贴边吸附，确认后直接进剪贴板。exe 也可以脱离 DSH 单独使用。
 
+> 关键词：截图 · 截屏 · 屏幕捕获 · screen capture · snip · DSH 插件 · DeepSeek Harness 插件
+
 ![主界面](docs/screenshots/overview-zh.png)
 
 ## 特性
