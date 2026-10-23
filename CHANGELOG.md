@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.5
+
+- The composer tooltip follows the DSH language again: its pointer listeners were bound to
+  nodes that DSH replaces when it re-renders the composer (theme or language switch), so the
+  tooltip kept the old language. They are delegated from the document now.
+- The tooltip and the capture UI share one source: the client asks the host for the locale
+  (`/shot/api/lang`), and the host reads it from the DSH profile - the same value it passes to
+  the tool - so the two can no longer disagree.
+
 ## 1.0.4
 
 - Dark mode: the magnifier card no longer draws an outline. The hard white border showed as a
